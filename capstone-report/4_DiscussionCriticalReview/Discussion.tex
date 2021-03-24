@@ -1,0 +1,19 @@
+
+Harmonic Drives provide excellent torque in a small form-factor.
+Their back-driving torque, however, is relatively low when compared to their output torque \cite{harmonic_drive_csd-2a_2019}.
+Springs were added to bring the torque while resting below this limit, at the cost of increasing the width of the entire leg assembly.
+Worm gears for transmission may provide a more compact and simple solution, with better resistance to back-driving \cite{spiroidgearing_worm_2019}. It would be beneficial to explore this solution in more depth and compare.
+
+The shafts were made of marine grade stainless steel 316, as it is a common material used in marine applications and is often used for pump shafts \cite{metal_supermarkets_marine_2017}.
+Due to the lower yield strength when compared to regular steel, the shaft diameters were too large for the output of the Harmonic Drives. A custom and relatively bulky adapter was required to interface the output bolts of the drive with the shaft.
+A stronger grade of steel such as AISI 4140 could be used to reduce the shaft dimension and switch the adapter for a more typical flange collar \cite{mcmaster-carr_rotary_2019}. Since all shafts are contained within the bellows and chassis, the use of stainless steel may not be necessary.
+
+As shown in Appendix \ref{app_sub:linkages}, the method for determining the relative lengths of the leg linkages was fairly experimental and sub-optimal. With more time, the leg linkage ratio optimization could be refined. This might lead to linkage combinations which reduce torques in the legs and match the desired $x$ and $y$ reach better, also likely resulting in a smaller, more compact robot.
+
+The parameterization could also be further developed by including the exact calculations of the normal forces, as well as computing the center of mass and verifying the robot stability at a given slope angle. In this event, maximum terrain slope may have been added as a parameterization input.
+
+As discussed in Section \ref{ssub_sec:constrained_parts}, different motors with higher torques or different mounting dimensions could be explored to avoid interference between the Harmonic Drive and motor when the robot reaches a certain size.
+
+Although the diameter of fasteners was parameterized, they were not included as parts in the final assembly due to time constraints.
+
+Finally, the robot is not very aesthetically pleasing. Considering it will operate in public spaces, a more attractive design could be developed.

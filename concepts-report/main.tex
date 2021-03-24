@@ -1,0 +1,100 @@
+%-------------- PREAMBLE --------------%
+\documentclass[letterpaper,12pt,onecolumn,titlepage,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}  % Margins
+\usepackage{hyperref}           % To reference other parts of paper
+\usepackage{graphicx}           % Image processing
+\usepackage{import}             % Multiple files management
+\usepackage{listings}           % For code blocks
+\usepackage{float}              % To fix figure placement
+\usepackage{notoccite}          % To ignore cite numbers in TOC, etc.
+\usepackage{array}              % Tables
+\usepackage{pdfpages}           % To import other pdfs
+\usepackage{longtable}          % For tables that don't fit on a page
+\usepackage[export]{adjustbox}          % For fitting table into page width, add border to image
+\usepackage[nottoc,numbib]{tocbibind}   % To include references in TOC
+\usepackage[titletoc]{appendix} % appendix in table in content
+\usepackage{fancyhdr}           % headers
+\usepackage{verbatim}           % To use \begin{comment}\end{comment}
+
+\linespread{1.3}                % 1 1/2 space for text
+\setcounter{secnumdepth}{5}     % number paragraph header
+\setcounter{tocdepth}{5}        % add paragraph header to TOC
+\let\sssubsection\paragraph     % sssubsection alias for paragraph
+
+% For drafting, you can use this instead of the "draft" flag in \documentclass{} to only hide images, and not the other things it does
+%\usepackage[draft]{graphicx}
+
+%-------------- DOCUMENT --------------%
+\begin{document}
+
+\import{1_Titlepage/}{Titlepage.tex}
+
+\pagenumbering{gobble}
+\clearpage\mbox{}\clearpage % empty page after titlepage
+
+\pagenumbering{roman}
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+\listoftables
+
+\newpage
+
+\pagenumbering{gobble}
+\clearpage\mbox{}\clearpage % empty page after titlepage
+
+\pagenumbering{arabic}
+
+\section{Project Charter} \label{sec:charter}
+\import{2_ProjectCharter/}{Mandate.tex}
+\import{2_ProjectCharter/}{Requirements.tex}
+\import{2_ProjectCharter/}{Constraints.tex}
+\import{2_ProjectCharter/}{Criteria.tex}
+
+\newpage
+
+\section{Design Concepts} \label{sec:design_concepts}
+\import{3_DesignConcepts/}{DesignConcepts.tex}
+% Add imports here as files are added
+
+\newpage
+
+\section{Cost Assessment} \label{sec:cost_assessment}
+\import{4_CostAssessment/}{ConceptSummary.tex}
+\import{4_CostAssessment/}{CostAssessment.tex}
+
+\newpage
+
+\section{Discussion} \label{sec:discussion}
+% Add imports here as files are added
+\import{5_Discussion/}{Discussion.tex}
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{6_References/References.bib}
+
+\newpage
+
+\begin{appendices}
+    % !!! This file will contain all appendices. Each appendix will be it's own section
+    \import{7_Appendices/}{Appendices.tex}
+\end{appendices}
+
+\end{document}
+
+% THIS IS HOW TO FORMAT STUFF
+% LABELS:
+% Figure:       \label{fig:figure_name}
+% Table:        \label{tab:table_name}
+% Appendix:     \label{app:appendix_name}
+% Section:      \label{sec:section_name}
+% Subsection:   \label{sub:subsection_name}
+% Subsubsection:\label{ssb:subsubsection_name}
+% Sssubsection: \label{sss:sssubsection_name}
+
+% When adding a \sssubsection{} \mbox{}\\

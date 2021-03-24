@@ -1,0 +1,71 @@
+%-------------- PREAMBLE --------------%
+\documentclass[letterpaper,12pt,onecolumn,titlepage,twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}  % To set margins
+\usepackage{hyperref}           % To reference other parts of paper
+\usepackage{graphicx}           % Image processing
+\usepackage{import}             % Multiple files management
+\usepackage{listings}           % For code blocks
+\usepackage{float}              % To fix figure placement
+\usepackage{notoccite}          % To ignore citation numbers in table of figures, etc.
+\usepackage{array}              %Tables
+\usepackage{pdfpages}           % To import other pdfs
+\usepackage{longtable}          % For tables that don't fit on a single page
+\usepackage{adjustbox}          % For fitting table into page width
+\usepackage[nottoc,numbib]{tocbibind}   % To include references in table of contents
+\linespread{1.3}                % 1 1/2 space for text
+\setcounter{secnumdepth}{5}     % number paragraph header
+\setcounter{tocdepth}{5}        % add paragraph header to TOC
+\let\sssubsection\paragraph     % sssubsection alias for paragraph
+
+%-------------- DOCUMENT --------------%
+\begin{document}
+% This is where we start including various sections
+
+\import{Titlepage/}{Titlepage.tex}
+
+\pagenumbering{gobble}
+\clearpage\mbox{}\clearpage % empty page after titlepage
+
+\pagenumbering{roman}
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+\listoftables
+
+\newpage
+
+\pagenumbering{arabic}
+
+\section{Project Charter} \label{sec:charter}
+\import{Sections/ProjectCharter/}{Mandate.tex}
+\import{Sections/ProjectCharter/}{Scope.tex}
+
+\newpage
+
+\section{Literature Review} \label{sec:lit_review}
+
+\import{Sections/LiteratureReview/}{Standards.tex}
+
+\import{Sections/LiteratureReview/}{AnimalLocomotion.tex}
+
+\import{Sections/LiteratureReview/}{ExistingSolutions.tex}
+\import{Sections/LiteratureReview/}{SubSystems.tex}
+\import{Sections/LiteratureReview/}{StandardComp.tex}
+
+\newpage
+
+\bibliographystyle{IEEEtran}
+\bibliography{References/References.bib}
+
+\newpage
+
+\appendix
+
+\section{Appendices} \label{sec:appendices}
+\import{Sections/Appendices/}{Appendices.tex}
+
+\end{document}

@@ -1,0 +1,28 @@
+
+The bolts holding the hip brackets to the chassis were analysed, but the bolts holding together the tibia and knee pulley, shown in Figure \ref{fig:shaft_knee}, were not.
+Since the bolts must fit through the pulley, space is limited, and so there is a risk of failure.
+Although not presented here, they will be parameterized alongside the bolts at the hips.
+
+The hip plates in Figure \ref{fig:leg_top} acting as the thigh and connecting the hip to the knee were not analyzed.
+They are made of Aluminium 6061 and have connecting pieces between them to carry compression and torsion loads.
+The remaining tensile and bending forces are likely not enough to damage the plates, and so it was decided that analyzing them was not necessary.
+
+The bellows were analyzed to ensure they could compress and extend to the required lengths; no form of stress analysis was done to ensure that tearing does not occur.
+
+The lower leg, or tibia, is press fit into a bracket at the knee.
+The foot is also press fit into the tibia.
+Neither were analyzed for safety factors, required heating temperature to press fit, or the required interference to ensure parts do not separate due to vibrations or regular loading.
+
+The chassis itself was not analyzed.
+The robot itself is not too heavy, however if too thin a structural plate to mount all the components is used, then bending is a serious concern, as it could cause the structure of the chassis to pull away from the weatherproof polymer shell.
+The shell itself was also not analyzed, although the only loads that are applied on it are reactions to the bellows stretching, whatever stresses pass from the chassis to the shell via bending, and humans pushing on the outside of the shell.
+
+The keys and bolts connecting the shaft collars to the Harmonic Drive and motor, and the bolts connecting the Harmonic Drive and motor to the hip brackets were not analyzed either, as it is highly likely that both Harmonic Drive and Maxon Motor selected bolt and key sizes that are sufficiently safe as long as operating within their design conditions.
+
+The silicone sock covering the foot is held in place using a screw-on compression cap, shown in Figure \ref{fig:foot}.
+The sock was not analyzed to ensure it would not tear away while walking.
+
+A tensioner in the form of a torsion spring was added to account for stretching in the belt over time and with temperature variations.
+The impact of the spring on the belt tension as a function of its various parameters could not accurately be modelled.
+
+As an accurate method of determining the sleeve bearing (bushing) friction could not found, this effect was neglected from the overall analysis.
